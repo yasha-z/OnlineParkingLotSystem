@@ -1,0 +1,32 @@
+@OnlineParkingLotSystem_HostAddress = http://localhost:5143
+@token =
+
+### Login
+POST {{OnlineParkingLotSystem_HostAddress}}/api/auth/login
+Content-Type: application/json
+
+{
+  "username": "admin",
+  "password": "admin123"
+}
+
+### Park vehicle (requires JWT)
+POST {{OnlineParkingLotSystem_HostAddress}}/api/parking/park
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "licensePlate": "ABC-1234",
+  "vehicleType": 2,
+  "feeStrategyType": 1
+}
+
+### Exit vehicle (requires JWT)
+PUT {{OnlineParkingLotSystem_HostAddress}}/api/parking/exit/1
+Authorization: Bearer {{token}}
+
+### Get active tickets (public)
+GET {{OnlineParkingLotSystem_HostAddress}}/api/parking/active
+
+### Get ticket by id (public)
+GET {{OnlineParkingLotSystem_HostAddress}}/api/parking/ticket/1
