@@ -10,7 +10,7 @@ public class GlobalExceptionHandler : IExceptionHandler
 
     public GlobalExceptionHandler(ILogger<GlobalExceptionHandler> logger)
     {
-        _logger = logger;
+        _logger = logger;//shows the error msg
     }
 
     public async ValueTask<bool> TryHandleAsync(
