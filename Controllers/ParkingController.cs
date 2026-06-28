@@ -17,7 +17,7 @@ public class ParkingController : ControllerBase
     }
 
     [HttpPost("park")]
-    [Authorize]
+    [Authorize]//first we will check if the user is authorized to park the vehicle
     [ProducesResponseType(StatusCodes.Status201Created)]
     public async Task<ActionResult<object>> ParkVehicle(
         [FromBody] ParkVehicleRequest request,
@@ -37,7 +37,7 @@ public class ParkingController : ControllerBase
     }
 
     [HttpGet("active")]
-    [AllowAnonymous]
+    [AllowAnonymous]//anyone can see the active tickets without authorization
     [ProducesResponseType(StatusCodes.Status200OK)]
     public async Task<ActionResult<object>> GetActiveTickets(CancellationToken cancellationToken)
     {
