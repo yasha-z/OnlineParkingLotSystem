@@ -4,7 +4,7 @@ using OnlineParkingLotSystem.Domain.Enums;
 namespace OnlineParkingLotSystem.Domain.Factories;
 
 public static class VehicleFactory
-{
+{//this class creates a vehicle object based on the vehicle type and license plate
     public static Vehicle Create(string licensePlate, VehicleType vehicleType)
     {
         Vehicle vehicle = vehicleType switch

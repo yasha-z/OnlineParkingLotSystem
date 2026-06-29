@@ -29,7 +29,7 @@ public static class ParkingMapper
         {
             TicketId = ticket.Id,
             LicensePlate = ticket.Vehicle.LicensePlate,
-            FeePaid = ticket.FeePaid ?? 0,
+            FeePaid = ticket.FeePaid ?? 0,//  fee is 0 if not paid
             EntryTime = ticket.EntryTime,
             ExitTime = ticket.ExitTime ?? DateTime.UtcNow,
             SpotNumber = ticket.ParkingSpot.SpotNumber

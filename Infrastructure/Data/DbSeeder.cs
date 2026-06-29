@@ -49,6 +49,7 @@ public static class DbSeeder
 
         context.ParkingLots.Add(parkingLot);
         await context.SaveChangesAsync();
+        
     }
 
     private static Floor CreateFloor(int floorNumber, IEnumerable<(string SpotNumber, ParkingSpot Spot)> spots)
